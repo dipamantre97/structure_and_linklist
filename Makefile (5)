@@ -1,0 +1,13 @@
+CC= gcc
+CFLAGS= -c
+
+final:main.o add_last.o display.o count.o add_beg.o
+	gcc $^ -o $@
+
+.c:.o
+	$(CC) $(CFLAGS) $^
+
+clean:
+	rm -f final
+	rm *.o
+
