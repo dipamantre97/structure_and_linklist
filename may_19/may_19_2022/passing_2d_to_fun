@@ -1,0 +1,63 @@
+//Passing 2d array
+
+
+//find maximum no in 2D array
+#include<stdio.h>
+
+int maximum(int x[][10],int r,int c)
+{
+int i,j,m;
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+{
+if(x[i][j]>m)
+m=x[i][j];
+}
+}
+return m;
+}
+
+
+void main()
+{
+int m[3][3],row,col,i,j,max;
+printf("enter row and col sie\n");
+scanf("%d %d",&row,&col);
+for(i=0;i<row;i++)
+{
+for(j=0;j<col;j++)
+{
+printf("enter elements\n");
+scanf("%",&m[i][j]);
+}
+max=maximum(m,row,col);
+printf("max element=%d",max);
+}
+
+
+
+
+#include<stdio.h>
+
+void print_array(int (*ptr)[3], int row, int col)
+//void print_array(int arr[][4], int row, int col)
+//void print_array(int row, int col, int (*ptr)[col])
+{
+        printf("Array elements are : ");
+        for(int i=0;i<row;i++)
+        {
+                for(int j=0;j<col;j++)
+                {
+                        printf("%d ", *(*(ptr+i)+j));
+                }
+        }
+        printf("\n");
+}
+
+int main()
+{
+        int arr[2][3] = {39, 20, 10, 30, 80, 79};
+        print_array(arr,2,3);
+}
+
