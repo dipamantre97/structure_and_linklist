@@ -1,0 +1,159 @@
+//find missing element in array
+/*#include<stdio.h>
+
+int main()
+{
+int a[5]={1,2,5,3};
+int sum=0,i;
+for(i=0;i<5;i++)
+{
+sum=sum+a[i];
+}
+int ele=(5*(5+1))/2-(sum);
+printf("missing element=%d",ele);
+
+}*/
+
+/*void middle()
+{
+struct stu *fast=head;
+struct stu *slow=head;
+while(fast!=NULL&&fast->next!=NULL)
+{
+fast=fast->next->next;
+slow=slow->next;
+}
+printf("middle ele=%d",slow->data);
+}*/
+
+
+
+/*#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int data;
+struct node *link;
+};
+struct node *root;
+
+void insert()
+{
+struct node *temp;
+temp=(struct node*)malloc(sizeof(struct node));
+printf("enter temp value\n");
+scanf("%d",&temp->data);
+temp->link=NULL;
+
+if(root==NULL)
+{
+root=temp;
+}
+else
+{
+struct node *p=root;
+temp->link=root;
+	root=temp;
+}
+}
+
+void display()
+{
+struct node *temp=root;
+int cnt=0;
+if(temp==NULL)
+{
+printf("list is empty\n");
+
+}
+while(temp!=NULL)
+{
+printf("%d\n",temp->data);
+temp=temp->link;
+cnt++;
+}
+printf("no of nodes=%d",cnt);
+}
+
+
+void reverse()
+{
+    if(root == NULL)
+    {
+        printf("List is empty\n");
+    }
+    else
+    {
+        struct sll *temp = root;
+        struct sll *prev = NULL;
+        struct sll *next = NULL;
+        while(temp != NULL)
+        {
+            next = temp->link;
+            temp->link = prev;
+            prev = temp;
+            temp = next;
+        }
+        root = prev;   
+    }
+}
+
+
+void maximum()
+{
+struct node *p=root;
+//struct node *q=root->link;
+int max=0;
+while(p!=NULL)
+{
+if((p->data)>max)
+{
+max=p->data;
+}
+p=p->link;
+//q=q->link;
+}
+printf("max=%d",max);
+}
+
+int main()
+{
+insert();
+insert();
+insert();
+display();
+maximum();
+}
+*/
+
+
+
+/*#include<stdio.h>
+int main()
+{
+int i=5;
+//printf("%d",i++);//5
+//printf("%d",++i);//7
+//printf("%d %d",i++,++i);//6 7
+printf("%d %d",++i,++i);// 7 7
+
+}*/
+
+/*#include<stdio.h>
+int main()
+{
+ volatile int i=5;
+printf("%d %d",++i,++i);//7 6
+}*/
+
+//statically int a[10]// 40 byte 10*4
+//dynamically int *ptr=(int *)malloc(10*sizeof(int))
+// int *ptr=(int *)calloc(10,sizeof(int))
+
+
+/*dangling pointer
+int *ptr=(int *)malloc(10*sizeof(int))
+free(ptr);
+printf("%d",*ptr);
+*/
+
